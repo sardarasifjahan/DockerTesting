@@ -14,6 +14,11 @@ import com.payment.repositiory.ProductRepositiory;
 public class ProductController {
 	@Autowired
 	ProductRepositiory productRepositiory;
+	
+	@GetMapping("/get")
+	public String go() {
+		return "Hello Docker";
+	}
 	@GetMapping("/all")
 	public Iterable<Product> getAll() {
 		return productRepositiory.findAll();
