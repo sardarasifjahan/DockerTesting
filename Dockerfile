@@ -1,4 +1,4 @@
-FROM openjdk:8
-ADD target/users-mysql.jar users-mysql.jar
-EXPOSE 8086
-ENTRYPOINT ["java", "-jar", "users-mysql.jar"]
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
